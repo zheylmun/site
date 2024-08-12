@@ -37,7 +37,7 @@ Pretty cool, right?
 
 Finally, you can do something like this (hopefully):
 
-{{% note(clickable=true, header="Quiz!") %}}
+{{ note(clickable=true, header="Quiz!") }}
 
 ## Hello this is markdown inside a note shortcode
 
@@ -49,7 +49,7 @@ fn main() {
 
 We can't call another shortcode inside a shortcode, but this is good enough.
 
-{{% end %}}
+{{ end }}
 
 Here is the raw markdown:
 
