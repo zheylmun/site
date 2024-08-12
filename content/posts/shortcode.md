@@ -35,40 +35,6 @@ Literal shortcode:
 
 Pretty cool, right?
 
-Finally, you can do something like this (hopefully):
-
-{{ note(clickable=true, header="Quiz!") }}
-
-## Hello this is markdown inside a note shortcode
-
-```rust
-fn main() {
-    println!("Hello World");
-}
-```
-
-We can't call another shortcode inside a shortcode, but this is good enough.
-
-{{ end }}
-
-Here is the raw markdown:
-
-```markdown
-{{/* note(clickable=true, header="Quiz!") */}}
-
-# Hello this is markdown inside a note shortcode
-
-\`\`\`rust
-fn main() {
-    println!("Hello World");
-}
-\`\`\`
-
-We can't call another shortcode inside a shortcode, but this is good enough.
-
-{{/* end */}}
-```
-
 Finally, we have center
 {{ note(center=true, header="Centered Text", body="This is centered text") }}
 
