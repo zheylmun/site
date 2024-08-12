@@ -1,0 +1,35 @@
+# The URL the site will be built for
+base_url = "https://example.com"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+taxonomies = [{ name = "tags" }]
+theme = "apollo"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+theme = "toggle"
+socials = [
+    { name = "GitHub", url = "https://github.com/zheylmun", icon = "github" },
+    # Configure socials here
+]
+menu = [
+    { name = "/zach", url = "/", weight = 0 },
+    { name = "/posts", url = "/posts", weight = 1 },
+    { name = "/tags", url = "/tags", weight = 2 },
+    { name = "/projects", url = "/projects", weight = 3 },
+    { name = "/about", url = "/about", weight = 4 },
+    # Configure menu bar here
+]
+# See this for more options: https://github.com/not-matthias/apollo/blob/main/config.toml#L14
+[extra.analytics.goatcounter]
+user = "zheylmun"
