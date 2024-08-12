@@ -49,7 +49,7 @@ fn main() {
 
 We can't call another shortcode inside a shortcode, but this is good enough.
 
-{% end %}
+{{% end %}}
 
 Here is the raw markdown:
 
@@ -77,3 +77,5 @@ Finally, we have center
 ```
 
 It works good enough for me!
+
+{{% end %}}
