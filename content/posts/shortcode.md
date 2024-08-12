@@ -77,5 +77,3 @@ Finally, we have center
 ```
 
 It works good enough for me!
-
-{{% end %}}
