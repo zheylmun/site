@@ -19,7 +19,7 @@ This one is clickable!
 
 Syntax:
 
-```
+```markdown
 {{/* note(header="Note!", body="This blog assumes basic terminal maturity") */}}
 {{/* note(clickable=true, hidden = true, header="Quiz!", body="The answer to the quiz!") */}}
 ```
@@ -29,7 +29,7 @@ You can also use some HTML in the text:
 
 Literal shortcode:
 
-```
+```markdown
 {{/* note(header="Note!", body="<h1>This blog assumes basic terminal maturity</h1>") */}}
 ```
 
@@ -37,9 +37,9 @@ Pretty cool, right?
 
 Finally, you can do something like this (hopefully):
 
-{% note(clickable=true, header="Quiz!") %}
+{{% note(clickable=true, header="Quiz!") %}}
 
-# Hello this is markdown inside a note shortcode
+## Hello this is markdown inside a note shortcode
 
 ```rust
 fn main() {
