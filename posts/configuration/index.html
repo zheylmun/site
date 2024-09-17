@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="dark light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    
+    
+    
+    <title>
+         Configuring Apollo
+        
+    </title>
+
+        
+            <meta property="og:title" content="Configuring Apollo" />
+        
+     
+
+     
+         
+     
+
+     
+         
+    
+
+    
+    
+
+    
+    
+        <link href=https://zheylmun.github.io/site/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Zach Heylmun" href="https://zheylmun.github.io/site/atom.xml">
+
+
+    
+    
+        <link rel="stylesheet" type="text/css" href=https://zheylmun.github.io/site/theme/light.css />
+        <link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://zheylmun.github.io/site/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+    <script src=https://zheylmun.github.io/site/js/themetoggle.js></script>
+    
+        <script>setTheme(getSavedTheme());</script>
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href=https://zheylmun.github.io/site/main.css />
+
+    
+</head>
+
+
+<body>
+    <div class="content">
+        <header>
+    <div class="main">
+        <a href=https:&#x2F;&#x2F;zheylmun.github.io&#x2F;site&#x2F;>Zach Heylmun</a>
+
+        <div class="socials">
+            
+            <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;zheylmun" class="social">
+                <img alt=GitHub src=https://zheylmun.github.io/site/social_icons/github.svg>
+            </a>
+            
+        </div>
+    </div>
+
+    <nav>
+        
+        <a href=https://zheylmun.github.io/site/posts style="margin-left: 0.5em">&#x2F;posts</a>
+        
+        <a href=https://zheylmun.github.io/site/tags style="margin-left: 0.5em">&#x2F;tags</a>
+        
+        <a href=https://zheylmun.github.io/site/projects style="margin-left: 0.5em">&#x2F;projects</a>
+        
+        <a href=https://zheylmun.github.io/site/about style="margin-left: 0.5em">&#x2F;about</a>
+        
+
+        
+        |<a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
+            <img src=https://zheylmun.github.io/site/feather/sun.svg id="sun-icon" style="filter: invert(1);" alt="Light" />
+            <img src=https://zheylmun.github.io/site/feather/moon.svg id="moon-icon" alt="Dark" />
+        </a>
+
+        <!-- Inititialize the theme toggle icons -->
+        <script>updateItemToggleTheme()</script>
+        
+    </nav>
+</header>
+
+
+        
+        
+    
+<main>
+    <article>
+        <div class="title">
+            
+            
+    <div class="page-header">
+        Configuring Apollo<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2024-07-09</time>
+                    
+
+                    
+
+                    
+
+                    
+                    
+                            <span class="tags-label"> :: Tags:</span>
+                            <span class="tags">
+                                    <a href="https://zheylmun.github.io/site/tags/documentation/" class="post-tag">documentation</a>
+                                
+                            </span>
+                    
+
+                    
+                    
+                        
+                        
+                            
+                        
+
+                        
+                    
+
+                    
+
+                </div>
+        </div>
+
+        
+
+        
+        
+
+        <section class="body">
+            <h2 id="theme-mode-theme"><a class="zola-anchor" href="#theme-mode-theme" aria-label="Anchor link for: theme-mode-theme">Theme Mode (<code>theme</code>)</a></h2>
+<p>Sets the color theme for your blog.</p>
+<ul>
+<li>Type: String</li>
+<li>Options: "light", "dark", "auto", "toggle"</li>
+<li>Default: "toggle"</li>
+<li>Usage: <code>theme = "toggle"</code></li>
+</ul>
+<p>The "toggle" option allows users to switch between light and dark modes, while "auto" typically follows the user's system preferences.</p>
+<h2 id="menu"><a class="zola-anchor" href="#menu" aria-label="Anchor link for: menu">Menu</a></h2>
+<p>Defines the navigation menu items for your blog.</p>
+<ul>
+<li>Type: Array of objects</li>
+<li>Default: []</li>
+<li>Usage:<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#bf616a;">menu </span><span>= [
+</span><span>    { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">/posts</span><span>&quot;, </span><span style="color:#bf616a;">url </span><span>= &quot;</span><span style="color:#a3be8c;">/posts</span><span>&quot;, </span><span style="color:#bf616a;">weight </span><span>= </span><span style="color:#d08770;">1 </span><span>},
+</span><span>    { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">/projects</span><span>&quot;, </span><span style="color:#bf616a;">url </span><span>= &quot;</span><span style="color:#a3be8c;">/projects</span><span>&quot;, </span><span style="color:#bf616a;">weight </span><span>= </span><span style="color:#d08770;">2 </span><span>},
+</span><span>    { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">/about</span><span>&quot;, </span><span style="color:#bf616a;">url </span><span>= &quot;</span><span style="color:#a3be8c;">/about</span><span>&quot;, </span><span style="color:#bf616a;">weight </span><span>= </span><span style="color:#d08770;">3 </span><span>},
+</span><span>    { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">/tags</span><span>&quot;, </span><span style="color:#bf616a;">url </span><span>= &quot;</span><span style="color:#a3be8c;">/tags</span><span>&quot;, </span><span style="color:#bf616a;">weight </span><span>= </span><span style="color:#d08770;">4 </span><span>},
+</span><span>]
+</span></code></pre>
+</li>
+</ul>
+<h2 id="socials"><a class="zola-anchor" href="#socials" aria-label="Anchor link for: socials">Socials</a></h2>
+<p>Defines the social media links.</p>
+<ul>
+<li>Type: Array of objects</li>
+<li>Default: []</li>
+<li>Usage:<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#bf616a;">socials </span><span>= [
+</span><span>  { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">twitter</span><span>&quot;, </span><span style="color:#bf616a;">url </span><span>= &quot;</span><span style="color:#a3be8c;">https://twitter.com/not_matthias</span><span>&quot;, </span><span style="color:#bf616a;">icon </span><span>= &quot;</span><span style="color:#a3be8c;">twitter</span><span>&quot; },
+</span><span>  { </span><span style="color:#bf616a;">name </span><span>= &quot;</span><span style="color:#a3be8c;">github</span><span>&quot;, </span><span style="color:#bf616a;">url </span><span>= &quot;</span><span style="color:#a3be8c;">https://github.com/not-matthias/</span><span>&quot;, </span><span style="color:#bf616a;">icon </span><span>= &quot;</span><span style="color:#a3be8c;">github</span><span>&quot; },
+</span><span>]
+</span></code></pre>
+</li>
+</ul>
+<h2 id="table-of-contents-toc"><a class="zola-anchor" href="#table-of-contents-toc" aria-label="Anchor link for: table-of-contents-toc">Table of Contents (<code>toc</code>)</a></h2>
+<p>Enables or disables the table of contents for posts.</p>
+<ul>
+<li>Type: Boolean</li>
+<li>Default: true</li>
+<li>Usage: <code>toc = true</code></li>
+</ul>
+<p>When enabled, a table of contents will be generated for posts, making it easier for readers to navigate through longer articles.</p>
+<h2 id="cdn-usage-use-cdn"><a class="zola-anchor" href="#cdn-usage-use-cdn" aria-label="Anchor link for: cdn-usage-use-cdn">CDN Usage (<code>use_cdn</code>)</a></h2>
+<p>Determines whether to use a Content Delivery Network (CDN) for assets.</p>
+<ul>
+<li>Type: Boolean</li>
+<li>Default: false</li>
+<li>Usage: <code>use_cdn = false</code></li>
+</ul>
+<p>When set to true, the theme will attempt to load assets from a CDN, which can improve loading times for visitors from different geographic locations.</p>
+<h2 id="favicon-favicon"><a class="zola-anchor" href="#favicon-favicon" aria-label="Anchor link for: favicon-favicon">Favicon (<code>favicon</code>)</a></h2>
+<p>Specifies the path to the favicon image for your blog.</p>
+<ul>
+<li>Type: String</li>
+<li>Default: "/icon/favicon.png"</li>
+<li>Usage: <code>favicon = "/icon/favicon.png"</code></li>
+</ul>
+<p>This sets the small icon that appears in the browser tab for your website.</p>
+<h2 id="comments-comment"><a class="zola-anchor" href="#comments-comment" aria-label="Anchor link for: comments-comment">Comments (<code>comment</code>)</a></h2>
+<p>Enables or disables the comment system for posts.</p>
+<ul>
+<li>Type: Boolean</li>
+<li>Default: false</li>
+<li>Usage: <code>comment = false</code></li>
+</ul>
+<p>After making <code>comment = true</code> save your script from <a href="https://giscus.app">Giscus</a> to <code>templates/_giscus_script.html</code>.
+When enabled, this allows readers to leave comments on your blog posts.</p>
+<h2 id="fancy-code-styling-fancy-code"><a class="zola-anchor" href="#fancy-code-styling-fancy-code" aria-label="Anchor link for: fancy-code-styling-fancy-code">Fancy Code Styling (<code>fancy_code</code>)</a></h2>
+<p>Enables enhanced styling for code blocks.</p>
+<ul>
+<li>Type: Boolean</li>
+<li>Default: true</li>
+<li>Usage: <code>fancy_code = true</code></li>
+</ul>
+<p>This option adds the language label and a copy button.</p>
+<h2 id="dynamic-notes-dynamic-note"><a class="zola-anchor" href="#dynamic-notes-dynamic-note" aria-label="Anchor link for: dynamic-notes-dynamic-note">Dynamic Notes (<code>dynamic_note</code>)</a></h2>
+<p>Allows for the creation of togglable note sections in your content.</p>
+<ul>
+<li>Type: Boolean</li>
+<li>Default: true</li>
+<li>Usage: <code>dynamic_note = true</code></li>
+</ul>
+<p>When enabled, you can create expandable/collapsible note sections in your blog posts.</p>
+<h2 id="source-code-repo-view"><a class="zola-anchor" href="#source-code-repo-view" aria-label="Anchor link for: source-code-repo-view">Source code (<code>repo_view</code>)</a></h2>
+<p>Do you want to link to the source code of your blog post? You can turn on the <code>repo_view</code> inside the <code>[extra]</code> section of your blog post.</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span>[extra]
+</span><span style="color:#bf616a;">repo_view </span><span>= </span><span style="color:#d08770;">true
+</span><span style="color:#bf616a;">repo_url </span><span>= &quot;</span><span style="color:#a3be8c;">https://github.com/not-matthias/apollo/tree/main/content</span><span>&quot;   </span><span style="color:#65737e;"># Alternatively add the repo here
+</span></code></pre>
+<p>The <code>repo_url</code> can be set in the <code>[extra]</code> section or in your <code>config.toml</code>.</p>
+<h2 id="anchor-links"><a class="zola-anchor" href="#anchor-links" aria-label="Anchor link for: anchor-links">Anchor Links</a></h2>
+<p>You can add anchor links by adding the following to your <code>_index.md</code>:</p>
+<pre data-lang="toml" style="background-color:#2b303b;color:#c0c5ce;" class="language-toml "><code class="language-toml" data-lang="toml"><span style="color:#bf616a;">insert_anchor_links </span><span>= &quot;</span><span style="color:#a3be8c;">heading</span><span>&quot;
+</span></code></pre>
+
+        </section>
+    </article>
+</main>
+
+
+
+        
+
+    </div>
+</body>
+
+</html>
