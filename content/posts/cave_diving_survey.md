@@ -35,7 +35,7 @@ many of which will be further discussed later in this document.
 
 ### Underwater Survey
 
-There are 2 popular kinds of survey in cave diving today.
+There are two popular kinds of survey in cave diving today.
 The first is traditional measurement with a compass, measuring device, and depth gauge.
 The second is semi-automated using a handheld measuring device called the [MNemo](https://www.arianesline.com/mnemo/).
 
