@@ -35,7 +35,7 @@ many of which will be further discussed later in this document.
 
 ### Underwater Survey
 
-There are 2 popular kinds of survey in cave diving today.
+There are two popular kinds of survey in cave diving today.
 The first is traditional measurement with a compass, measuring device, and depth gauge.
 The second is semi-automated using a handheld measuring device called the [MNemo](https://www.arianesline.com/mnemo/).
 
@@ -53,7 +53,7 @@ Once the dive is complete, the survey data is entered into software and added to
 
 #### MNemo Survey
 
-MNemo survey also involves taking a compass heading, distance, and depth measurement at each station,
+MNemo survey also involves taking distance and depth measurements and a compass heading at each station,
 but the MNemo device takes and records these measurements automatically.
 The distance is measured while swimming along the line,
 and the compass heading is measured by the orientation of the device.
@@ -65,11 +65,9 @@ and the device must be physically attached to the line to record a station.
 
 Both manual and MNemo survey share a similar set of challenges.
 
-* Measurement Error: All measurements have some degree of error.
-  This error can be caused by a variety of factors,
+* Measurement Error: All measurements have some degree of error which can be caused by a variety of factors,
   including human error, equipment error, and environmental conditions.
-  In particular, the line used to represent a straight line between stations may stretch,
-  or sag, or be affected by currents, which can cause inaccurate distance (and heading) measurements.
+  In particular, the cave line or measuring tape between stations may stretch, sag, or be affected by currents, resulting in inaccurate distance and/or heading measurements.
 * Interference: Compasses can be affected by magnetic interference from metal objects,
   which can cause inaccurate readings.
   This is of particular concern when carrying significant amounts of metal equipment which is unavoidable in cave diving.
@@ -110,7 +108,7 @@ The data collected typically includes the following for each `shot`:
 
 | Data Item                   | Mandatory | Description                                                 |
 |-----------------------------|-----------|-------------------------------------------------------------|
-| From Station                | Yes       | The station the shot is being is being measured from        |
+| From Station                | Yes       | The station the shot is being measured from                 |
 | To Station                  | Yes       | The station the shot is being measured to                   |
 | Heading                     | Yes       | The compass heading from the from station to the to station |
 | Distance                    | Yes       | The distance between the from station and the to station    |
