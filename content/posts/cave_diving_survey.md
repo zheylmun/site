@@ -67,7 +67,7 @@ Both manual and MNemo survey share a similar set of challenges.
 
 * Measurement Error: All measurements have some degree of error which can be caused by a variety of factors,
   including human error, equipment error, and environmental conditions.
-  In particular, the line used to represent a straight line between stations may stretch, sag, or be affected by currents, resulting in inaccurate distance and/or heading measurements.
+  In particular, the cave line or measuring tape between stations may stretch, sag, or be affected by currents, resulting in inaccurate distance and/or heading measurements.
 * Interference: Compasses can be affected by magnetic interference from metal objects,
   which can cause inaccurate readings.
   This is of particular concern when carrying significant amounts of metal equipment which is unavoidable in cave diving.
