@@ -53,7 +53,7 @@ Once the dive is complete, the survey data is entered into software and added to
 
 #### MNemo Survey
 
-MNemo survey also involves taking distance and depth measurementa and a compass heading at each station,
+MNemo survey also involves taking distance and depth measurements and a compass heading at each station,
 but the MNemo device takes and records these measurements automatically.
 The distance is measured while swimming along the line,
 and the compass heading is measured by the orientation of the device.
