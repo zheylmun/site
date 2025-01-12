@@ -60,7 +60,10 @@ Frustratingly, you have to do all of those things before your code even compiles
 The ergonomics of libraries are a little different.
 An ergonomic library is one that is easy to use, easy to understand, and hard to misuse.
 It's easy to get started with, and it's pleasant to use as intended.
-It should be hard to use wrong, handle errors gracefully, and provide helpful feedback when things go awry.
+Rust's strict but expressive type system allows for libraries that are both powerful and easy to use.
+Well designed libraries encode their invariants in the types and functions they expose,
+making it difficult to misuse them.
+Thoughtful traits and macros can give users lots of power with minimal boilerplate.
 
 ## Ergonomics in Rust
 
@@ -118,13 +121,13 @@ The compiler catches cases where you've made a mistake or missed something that 
 The result is that once a major refactor compiles again, the code probably works as intended.
 The compiler is very particular, but it has your back, and it's a great feeling.
 
-The specificity also tends to prickle at that sense of perfectionism that many developers have:
-- "I shouldn't need to clone that here, I should be able to pass a reference".
-- "I shouldn't need to unwrap that here, I should be able to handle the error".
-- "I should be able to prevent that mistake from happening in the first place".
-- "I shouldn't need to write that boilerplate, I should be able to use a macro".
+The specificity of the language does tend to awaken the perfectionist in many developers:
+- "I shouldn't need to clone that here, I should be able to pass a reference."
+- "I shouldn't need to unwrap that here, I should be able to handle the error."
+- "I shouldn't need to write that boilerplate, I should be able to use a macro."
+- "I should be able to prevent that mistake from happening in the first place."
 
-This results in a lot of revisiting code that works, but isn't quite perfect.
+This can result in a lot of revisiting code that works, but isn't quite perfect.
 Many of the examples above are so subtle in other languages that even experienced developers might not notice them.
 In Rust, they're glaringly obvious.
 
@@ -152,8 +155,8 @@ and the language gave them the tools to do so.
 Developers want to make their code better in every language.
 Rust isn't unique in that regard, but it is unique in how it enables developers to identify where and how to make their code better.
 
-The result is that the really great crates in the Rust ecosystem are a joy to use.
-It's not just because the authors are genius programmers(many of them are).
+The result is that many crates in the Rust ecosystem are a joy to use.
+It's not just because the authors are genius programmers (many of them are).
 It's because they've spent the time to address areas that were flawed over and over again.
 You don't have to be a world famous open source developer to write great code in Rust.
 You just have to be willing to fix the things that can obviously be improved until you've built something incredible.
