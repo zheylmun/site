@@ -94,12 +94,14 @@ let results =
 
 There are so many incredible examples of great API design in the Rust ecosystem.
 Rust's standard library is the only standard library that I've ever used that I would describe as both
-"great" and easily readable.
+extremely clever and easily readable.
+Clever code tends to be dense and opaque,
+but Rust's standard library is ingenious because its abstractions are so simple and powerful.
 
 The Rustacean's that really drive the ecosystem write an unbelievable ammount of code.
 Not only do they write a lot of code, but they write a lot of really good code.
 I've never understood quite how they do it.
-Having the opportunity to spend the time to really polish code myself has given me some insight though.
+Having the opportunity to spend the time to really polish Rust code myself has given me some insight though.
 The key is to just keep fixing the things that are obviously wanting.
 
 ## What's Wrong?
@@ -122,7 +124,7 @@ The specificity also tends to prickle at that sense of perfectionism that many d
 - "I should be able to prevent that mistake from happening in the first place".
 - "I shouldn't need to write that boilerplate, I should be able to use a macro".
 
-This results in a lot of revisiting code that works, but isn't quite right.
+This results in a lot of revisiting code that works, but isn't quite perfect.
 Many of the examples above are so subtle in other languages that even experienced developers might not notice them.
 In Rust, they're glaringly obvious.
 
@@ -137,10 +139,10 @@ Their authors made them work, and then they made them better.
 They are great examples of what can be accomplished with a lot of time, effort, and dedication.
 The crates that are incredible works of engineering today have stood the test of time.
 They have fixed the papercuts reported by thousands of users.
-Issues that they never considered have been reported and fixed.
+Issues that they never considered when writing their libraries have been reported and fixed.
 They have been polished to a mirror sheen and are a joy to use because
 so many of the things that were obviously wanting in previous iterations have been addressed.
-Someone already found the rough edges you were going to run into,
+Someone already found the rough edges that you were going to run into,
 and either fixed the issue themselves, or reported the issue to the authors who did.
 Sometimes fixing the issue was easy, and sometimes it was hard.
 Sometimes it required a major refactor, and sometimes it required building a whole other library.
@@ -153,3 +155,5 @@ Rust isn't unique in that regard, but it is unique in how it enables developers 
 The result is that the really great crates in the Rust ecosystem are a joy to use.
 It's not just because the authors are genius programmers(many of them are).
 It's because they've spent the time to address areas that were flawed over and over again.
+You don't have to be a world famous open source developer to write great code in Rust.
+You just have to be willing to fix the things that can obviously be improved until you've built something incredible.
