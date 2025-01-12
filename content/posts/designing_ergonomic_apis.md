@@ -42,17 +42,17 @@ just by addressing issues that were obvious shortcuts, as well as areas that cau
 ## What are Ergonomics?
 
 The ergonomics of a programming language are the features that make it easy to write code.
-Languages like Go, Python, and Ruby are known for their ergonomics.
+Go, Python, and Ruby are known for their ergonomics.
 They have a simple syntax, powerful standard libraries, and a focus on developer productivity.
-Unfortunately their ergonomics come at the cost of making it easy to introduce runtime errors
+Unfortunately, their ergonomics come at the cost of making it easy to introduce runtime errors
 and structural issues that can be difficult to debug.
-It's easy to quickly develop functionality in those languages,
+It's easy to develop functionality quickly in those languages,
 but there tends to be a long tail of bugs and performance issues.
 It's easy to get things *mostly right*,
-but it's near impossible to get things *exactly right*.
+but it's much harder to get things *exactly right*.
 
-Rust, on the other hand, has a reputation for being difficult to learn and use,
-seemingly at odds with the admiration and praise heaped on the language.
+On the other hand, Rust has a reputation for being difficult to learn and use,
+seemingly at odds with its popularity and veneration.
 It has a steep learning curve, a complex type system,
 and a focus on memory safety and performance that forces developers to worry about things they might not even consider in other languages.
 Frustratingly, you have to do all of those things before your code even compiles.
@@ -98,7 +98,7 @@ extremely clever and easily readable.
 Clever code tends to be dense and opaque,
 but Rust's standard library is ingenious because its abstractions are so simple and powerful.
 
-The Rustacean's that really drive the ecosystem write an unbelievable ammount of code.
+The Rustaceans that really drive the ecosystem write an unbelievable ammount of code.
 Not only do they write a lot of code, but they write a lot of really good code.
 I've never understood quite how they do it.
 Having the opportunity to spend the time to really polish Rust code myself has given me some insight though.
@@ -114,9 +114,9 @@ If you've coded yourself into a corner with the borrow checker,
 you have to refactor your code to fix your access patterns.
 
 Fortunately, it's pretty easy to make sweeping changes in Rust for the same reasons that writing it in the first place is difficult.
-The compiler catches cases where you've made a mistake, or missed something that needs to be updated.
-The result is that once a major refactor compiles again, the code probably still works as expected.
-The compiler very particular, but it has your back, and it's a great feeling.
+The compiler catches cases where you've made a mistake or missed something that needs to be updated.
+The result is that once a major refactor compiles again, the code probably works as intended.
+The compiler is very particular, but it has your back, and it's a great feeling.
 
 The specificity also tends to prickle at that sense of perfectionism that many developers have:
 - "I shouldn't need to clone that here, I should be able to pass a reference".
