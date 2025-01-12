@@ -28,13 +28,16 @@ I've spent the last several months building libraries in Rust,
 and I've come to appreciate the sum of the language's strengths for a reason I haven't seen discussed much:
 obvious correctness drives ergonomics.
 Because the language is so strict, it's easy to identify where you've taken shortcuts to get things working.
-Like probably everyone who's ever written code, I have taken shortcuts I regretted to make deliveries on time.
-I've also been fortunate enough to have the opportunity to go back and fix much of that technical debt.
+Like just about everyone who's ever written code, I have taken shortcuts I regretted to make deliveries on time.
+I didn't always consider carefully whether functions should take references or values.
+I didn't always encode the invariants of my data structures in the type system.
+I wrote some functions that were awkward to use and traits that resulted in a lot of boilerplate.
+I've also been fortunate enough to have the opportunity to go back and address much of that technical debt.
 The results have been rather remarkable.
 
-By simply fixing the things that were obviously wrong, I've been able to make my code more correct, robust, and simple.
+By simply fixing the things that were obviously less than ideal, I've been able to make my code more correct, robust, and simple.
 I've arrived at a place where I have some pretty great ergonomics in some of the APIs I've built
-just by fixing the things that were obviously wrong or more onerous than they needed to be.
+just by addressing issues that were obvious shortcuts, as well as areas that caused me to take shortcuts downstream.
 
 ## What are Ergonomics?
 
@@ -97,7 +100,7 @@ The Rustacean's that really drive the ecosystem write an unbelievable ammount of
 Not only do they write a lot of code, but they write a lot of really good code.
 I've never understood quite how they do it.
 Having the opportunity to spend the time to really polish code myself has given me some insight though.
-The key is to just keep fixing the things that are obviously wrong.
+The key is to just keep fixing the things that are obviously wanting.
 
 ## What's Wrong?
 
@@ -113,15 +116,14 @@ The compiler catches cases where you've made a mistake, or missed something that
 The result is that once a major refactor compiles again, the code probably still works as expected.
 The compiler very particular, but it has your back, and it's a great feeling.
 
-
-  It also tends to prickle at that sense of perfectionism that many developers have:
+The specificity also tends to prickle at that sense of perfectionism that many developers have:
 - "I shouldn't need to clone that here, I should be able to pass a reference".
 - "I shouldn't need to unwrap that here, I should be able to handle the error".
 - "I should be able to prevent that mistake from happening in the first place".
 - "I shouldn't need to write that boilerplate, I should be able to use a macro".
 
 This results in a lot of revisiting code that works, but isn't quite right.
-Many of the examples above are so subtle in many languages that even experienced developers might not notice them.
+Many of the examples above are so subtle in other languages that even experienced developers might not notice them.
 In Rust, they're glaringly obvious.
 
 This is very much a double edged sword.
@@ -135,14 +137,19 @@ Their authors made them work, and then they made them better.
 They are great examples of what can be accomplished with a lot of time, effort, and dedication.
 The crates that are incredible works of engineering today have stood the test of time.
 They have fixed the papercuts reported by thousands of users.
-They have been polished to a mirror sheen and are a joy to use because so many of the things that are obviously wrong have been addressed.
+Issues that they never considered have been reported and fixed.
+They have been polished to a mirror sheen and are a joy to use because
+so many of the things that were obviously wanting in previous iterations have been addressed.
 Someone already found the rough edges you were going to run into,
 and either fixed the issue themselves, or reported the issue to the authors who did.
 Sometimes fixing the issue was easy, and sometimes it was hard.
-Sometimes it required a major refactor, and sometimes it required a new feature.
+Sometimes it required a major refactor, and sometimes it required building a whole other library.
 Sometimes it required working with the language team itself to introduce new language features or fix bugs.
+The unifying factor is that the authors were dedicated to making their code better,
+and the language gave them the tools to do so.
+Developers want to make their code better in every language.
+Rust isn't unique in that regard, but it is unique in how it enables developers to identify where and how to make their code better.
 
 The result is that the really great crates in the Rust ecosystem are a joy to use.
 It's not just because the authors are genius programmers(many of them are).
-It's because they've spent the time to fix the things that were obviously wrong,
-over and over again.
+It's because they've spent the time to address areas that were flawed over and over again.
