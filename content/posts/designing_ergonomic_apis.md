@@ -20,17 +20,17 @@ This isn't to suggest that other languages don't have great ecosystems,
 but the quality of core crates in the Rust ecosystem is just on another level.
 They're not just good, they're great.
 They have a level of correctness, robustness, and attention to detail that is hard to find in any other language.
-What's more, there are a *Lot* of examples of really incredible open source projects.
+Moreover, there are a *lot* of examples of really incredible open source projects written in Rust.
 I've been blown away by the quality of the crates I've used in Rust since I started working in the language.
 The code is so good in fact, that it's honestly pretty intimidating.
 
-I've spent the last several months building a bunch of foundational (for other work) libraries in Rust,
-and I've come to appreciate the sum of the language's strengths for a reason I haven't seen discussed as much:
+I've spent the last several months building libraries in Rust,
+and I've come to appreciate the sum of the language's strengths for a reason I haven't seen discussed much:
 obvious correctness drives ergonomics.
 Because the language is so strict, it's easy to identify where you've taken shortcuts to get things working.
-Like everyone else, I've had deadlines and deliveries to make, and I've taken shortcuts that I've regretted.
-I've also been fortunate enough to have the opportunity to go back and fix that technical debt.
-The results to have been rather remarkable.
+Like probably everyone who's ever written code, I have taken shortcuts I regretted to make deliveries on time.
+I've also been fortunate enough to have the opportunity to go back and fix much of that technical debt.
+The results have been rather remarkable.
 
 By simply fixing the things that were obviously wrong, I've been able to make my code more correct, robust, and simple.
 I've arrived at a place where I have some pretty great ergonomics in some of the APIs I've built
