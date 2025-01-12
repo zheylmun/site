@@ -67,7 +67,7 @@ Thoughtful traits and macros can give users lots of power with minimal boilerpla
 
 ## Ergonomics in Rust
 
-Using the really great crates in the Rust ecosystem is like a masterclass in API design.
+The best crates in the Rust ecosystem are like a masterclass in API design.
 Need to serialize a complex data structure?
 
 [Serde](https://serde.rs) makes it easy.
@@ -101,11 +101,11 @@ extremely clever and easily readable.
 Clever code tends to be dense and opaque,
 but Rust's standard library is ingenious because its abstractions are so simple and powerful.
 
-The Rustaceans that really drive the ecosystem write an unbelievable ammount of code.
-Not only do they write a lot of code, but they write a lot of really good code.
+The Rustaceans that really drive the ecosystem write an unbelievable ammount of code of incredibly high quality code.
 I've never understood quite how they do it.
 Having the opportunity to spend the time to really polish Rust code myself has given me some insight though.
-The key is to just keep fixing the things that are obviously wanting.
+The key is to just keep fixing the things that are obviously wanting,
+and the language itself helps you do it.
 
 ## What's Wrong?
 
@@ -153,7 +153,7 @@ Sometimes it required working with the language team itself to introduce new lan
 The unifying factor is that the authors were dedicated to making their code better,
 and the language gave them the tools to do so.
 Developers want to make their code better in every language.
-Rust isn't unique in that regard, but it is unique in how it enables developers to identify where and how to make their code better.
+Rust isn't unique in that regard, but it is unique in how it helps developers to identify where and how to make their code better.
 
 The result is that many crates in the Rust ecosystem are a joy to use.
 It's not just because the authors are genius programmers (many of them are).
