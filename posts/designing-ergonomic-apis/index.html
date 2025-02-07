@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="dark light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+
+    
+    
+    
+    <title>
+         Designing Ergonomic APIs in Rust
+        
+    </title>
+
+        
+            <meta property="og:title" content="Designing Ergonomic APIs in Rust" />
+        
+     
+
+     
+         
+     
+
+     
+         
+    
+
+    
+    
+
+    
+    
+        <link href=https://zheylmun.github.io/site/fonts.css rel="stylesheet" />
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Zach Heylmun" href="https://zheylmun.github.io/site/atom.xml">
+
+
+    
+    
+        <link rel="stylesheet" type="text/css" href=https://zheylmun.github.io/site/theme/light.css />
+        <link id="darkModeStyle" rel="stylesheet" type="text/css" href="https://zheylmun.github.io/site/theme/dark.css" />
+    
+
+    <!-- Set the correct theme in the script -->
+    <script src=https://zheylmun.github.io/site/js/themetoggle.js></script>
+    
+        <script>setTheme(getSavedTheme());</script>
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href=https://zheylmun.github.io/site/main.css />
+
+    
+</head>
+
+
+<body>
+    <div class="content">
+        <header>
+    <div class="main">
+        <a href=https:&#x2F;&#x2F;zheylmun.github.io&#x2F;site&#x2F;>Zach Heylmun</a>
+
+        <div class="socials">
+            
+            <a rel="me" href="https:&#x2F;&#x2F;github.com&#x2F;zheylmun" class="social">
+                <img alt=GitHub src=https://zheylmun.github.io/site/social_icons/github.svg>
+            </a>
+            
+        </div>
+    </div>
+
+    <nav>
+        
+        <a href=https://zheylmun.github.io/site/posts style="margin-left: 0.5em">&#x2F;posts</a>
+        
+        <a href=https://zheylmun.github.io/site/tags style="margin-left: 0.5em">&#x2F;tags</a>
+        
+        <a href=https://zheylmun.github.io/site/projects style="margin-left: 0.5em">&#x2F;projects</a>
+        
+        <a href=https://zheylmun.github.io/site/about style="margin-left: 0.5em">&#x2F;about</a>
+        
+
+        
+        |<a id="dark-mode-toggle" onclick="toggleTheme(); event.preventDefault();" href="#">
+            <img src=https://zheylmun.github.io/site/feather/sun.svg id="sun-icon" style="filter: invert(1);" alt="Light" />
+            <img src=https://zheylmun.github.io/site/feather/moon.svg id="moon-icon" alt="Dark" />
+        </a>
+
+        <!-- Inititialize the theme toggle icons -->
+        <script>updateItemToggleTheme()</script>
+        
+    </nav>
+</header>
+
+
+        
+        
+    
+<main>
+    <article>
+        <div class="title">
+            
+            
+    <div class="page-header">
+        Designing Ergonomic APIs in Rust<span class="primary-color" style="font-size: 1.6em">.</span>
+    </div>
+
+
+                <div class="meta">
+                    
+                        Posted on <time>2025-01-11</time>
+                    
+
+                    
+
+                    
+
+                    
+                    
+                            <span class="tags-label"> :: Tags:</span>
+                            <span class="tags">
+                                    <a href="https://zheylmun.github.io/site/tags/rust/" class="post-tag">Rust</a>, 
+                                
+                                    <a href="https://zheylmun.github.io/site/tags/api-design/" class="post-tag">API Design</a>, 
+                                
+                                    <a href="https://zheylmun.github.io/site/tags/engineering/" class="post-tag">Engineering</a>
+                                
+                            </span>
+                    
+
+                    
+                    
+
+                    
+
+                </div>
+        </div>
+
+        
+
+        
+        
+
+        <section class="body">
+            <h1 id="designing-ergonomic-apis-in-rust"><a class="zola-anchor" href="#designing-ergonomic-apis-in-rust" aria-label="Anchor link for: designing-ergonomic-apis-in-rust">Designing Ergonomic APIs in Rust</a></h1>
+<p><a href="https://rustlang.org">Rust</a> is a <a href="https://survey.stackoverflow.co/2024/technology#admired-and-desired">great programming language</a>.
+It has a strong type system, memory safety, concurrency as a first class feature, a powerful macro system,
+and a focus on developer productivity, in addition to being one of the fastest languages out there.
+All of those virtues have been covered by too many blogs, articles, and talks to count.
+The ecosystem of crates is growing rapidly,
+but many of the foundational crates are of a quality that is hard to find in other languages.
+Crates like <a href="https://github.com/chronotope/chrono">Chrono</a>, <a href="https://tokio.rs">Tokio</a>, and <a href="https://hyper.rs">Hyper</a> are well-designed,
+well-documented, and well-maintained.
+This isn't to suggest that other languages don't have great ecosystems,
+but the quality of core crates in the Rust ecosystem is just on another level.
+They have a level of correctness, robustness, and attention to detail that is hard to find in any other language.
+Moreover, there are a <em>lot</em> of examples of really incredible open source projects written in Rust.
+The code is so good in fact, that it's honestly pretty intimidating.</p>
+<p>I've spent the last several months building libraries in Rust,
+and I've come to appreciate the sum of the language's features for a reason I haven't seen discussed much:
+obvious correctness drives ergonomics.
+Because the language is so strict, it's easy to identify where you've cut corners to get things working.
+Like just about everyone who's ever written code, I have taken shortcuts I regretted to make deliveries on time.
+I didn't always consider carefully whether functions should take references or values.
+I didn't always encode the invariants of my data structures in the type system.
+I wrote some functions that were awkward to use and traits that resulted in a lot of boilerplate.
+I've also been fortunate enough to have the opportunity to go back and address much of that technical debt.
+The results have been rather remarkable.</p>
+<p>By revising code that was obviously lacking, I have been able to make my code more simple, correct, and robust.
+The ergonomics of the APIs I've built have become far better than I envisioned when I began writing them because Rust made it easy to find and fix the hacks.</p>
+<h2 id="what-are-ergonomics"><a class="zola-anchor" href="#what-are-ergonomics" aria-label="Anchor link for: what-are-ergonomics">What are Ergonomics?</a></h2>
+<p>The ergonomics of a programming language are the features that make it easy to write code.
+Go, Python, and Ruby are known for their ergonomics.
+They have simple syntaxes, powerful standard libraries, and a focus on developer productivity.
+Unfortunately, their ergonomics come at the cost of making it easy to introduce runtime errors
+and structural issues that can be difficult to debug.
+It's easy to develop functionality quickly in those languages,
+but there tends to be a long tail of bugs and performance issues.
+It's easy to get things <em>mostly right</em>,
+but it's much harder to get things <em>exactly right</em>.</p>
+<p>On the other hand, Rust has a reputation for being difficult to learn and use,
+seemingly at odds with its popularity and veneration.
+It has a steep learning curve, a complex type system,
+and a focus on memory safety and performance that forces developers to worry about things they might not even consider in other languages.
+Frustratingly, you have to consider and address all of those issues before your code will even compile.</p>
+<p>In the context of libraries, "ergonomics" means something a little different.
+An ergonomic library is one that is easy to use, hard to misuse, easy to understand.
+Rust's strict but expressive type system allows for libraries that are both powerful and easy to use.
+Well designed libraries encode their invariants in the types and functions they expose,
+making it difficult to invoke them incorrectly.
+Thoughtful traits and macros can give users lots of power with minimal boilerplate.</p>
+<h2 id="ergonomics-in-rust"><a class="zola-anchor" href="#ergonomics-in-rust" aria-label="Anchor link for: ergonomics-in-rust">Ergonomics in Rust</a></h2>
+<p>The best crates in the Rust ecosystem are like a masterclass in API design.
+Need to serialize a complex data structure?</p>
+<p><a href="https://serde.rs">Serde</a> makes it easy.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span>#[</span><span style="color:#bf616a;">derive</span><span>(Serialize)]
+</span><span>Struct MyComplexType{...
+</span></code></pre>
+<p><strong>Boom</strong>, done.</p>
+<p>Need to make a complicated  SQL query?
+<a href="https://diesel.rs%22">Diesel</a> has you covered.</p>
+<pre data-lang="rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-rust "><code class="language-rust" data-lang="rust"><span style="color:#b48ead;">let</span><span> results =
+</span><span>      orders::table
+</span><span>      .</span><span style="color:#96b5b4;">inner_join</span><span>(users::table.</span><span style="color:#96b5b4;">on</span><span>(orders::user_id.</span><span style="color:#96b5b4;">eq</span><span>(users::id)))
+</span><span>      .</span><span style="color:#96b5b4;">inner_join</span><span>(order_items::table.</span><span style="color:#96b5b4;">on</span><span>(order_items::order_id.</span><span style="color:#96b5b4;">eq</span><span>(orders::id)))
+</span><span>      .</span><span style="color:#96b5b4;">filter</span><span>(order_items::product_id.</span><span style="color:#96b5b4;">eq</span><span>(product_id))
+</span><span>      .</span><span style="color:#96b5b4;">select</span><span>((users::username,
+</span><span>          diesel::sql_function::sum(order_items::price).as(total_spent)))
+</span><span>      .</span><span style="color:#96b5b4;">group_by</span><span>(users::username)
+</span><span>      .</span><span style="color:#96b5b4;">order_by</span><span>(diesel::sql_function::sum(order_items::price).</span><span style="color:#96b5b4;">desc</span><span>())
+</span><span>      .</span><span style="color:#96b5b4;">limit</span><span>(</span><span style="color:#d08770;">10</span><span>)
+</span><span>      .load::&lt;(String, </span><span style="color:#b48ead;">i32</span><span>)&gt;(conn)?;
+</span></code></pre>
+<p><strong>Whoa</strong>, that's a big, complex expression that says and does exactly what I want.</p>
+<p>There are far too many examples of incredible API design in the Rust ecosystem to include here. I highly recommend checking out the growing list of community recommended crates at <a href="https://github.com/rust-unofficial/awesome-rust">Awesome Rust</a> and <a href="https://blessed.rs/crates">blessed.rs</a>.
+Rust's standard library is the only standard library that I've ever used that I would describe as both
+extremely clever and easily readable.
+Clever code tends to be dense and opaque,
+but Rust's standard library is ingenious because its abstractions are so simple yet powerful.</p>
+<p>The Rustaceans who drive the ecosystem write an unbelievable amount of incredibly high-quality code.
+I never understood quite how they did it until I spent some time refactoring my own Rust APIs.
+What stands out to me is the convenience and pedagogy inherent to the language itself. The key is to just keep fixing the things that are imperfect, and Rust will practically mentor you to something exceptional.</p>
+<h2 id="what-s-wrong"><a class="zola-anchor" href="#what-s-wrong" aria-label="Anchor link for: what-s-wrong">What's Wrong?</a></h2>
+<p>The Rust language is very specific.
+Very little is implicit.
+If you want to copy something, you have to call <code>.clone()</code>.
+If you get an error, you have to explicitly handle it (or call <code>.unwrap()</code> 🤮).
+If you've coded yourself into a corner with the borrow checker,
+you have to refactor your code to fix your access patterns.</p>
+<p>Fortunately, it's pretty easy to make sweeping changes in Rust for the same reasons that writing it in the first place is difficult.
+The compiler catches cases where you've made a mistake or missed something that needs to be updated.
+The result is that once a major refactor compiles again, the code probably works as intended.
+The compiler is very particular, but it has your back, and it's a great feeling.</p>
+<p>The specificity of the language does tend to awaken the perfectionist in its developers:</p>
+<ul>
+<li>"I shouldn't need to clone that here, I should be able to pass a reference."</li>
+<li>"I shouldn't need to unwrap that here, I should be able to handle the error."</li>
+<li>"I shouldn't need to write that boilerplate, I should be able to use a macro."</li>
+<li>"I should be able to prevent that mistake from happening in the first place."</li>
+</ul>
+<p>This cycle can result in revisiting a lot of code that works but isn't quite perfect.
+Many of the deficiencies described above are so subtle in other languages that even experienced developers might overlook them.
+In Rust, they're glaringly obvious.</p>
+<p>It's easy to get lost in the weeds of perfectionism, but it's also Rust's superpower.</p>
+<h2 id="fixing-the-obvious"><a class="zola-anchor" href="#fixing-the-obvious" aria-label="Anchor link for: fixing-the-obvious">Fixing the Obvious</a></h2>
+<p>The crates I mention here weren't this good in their first release.
+Their authors made them work, and then they made them better.
+The crates that are incredible works of engineering today have stood the test of time.
+The authors have fixed the papercuts reported by thousands of users.
+Issues they might never have considered when writing their libraries have been reported and remediated.
+These crates have been polished to a mirror sheen and are a joy to use because
+so many of the things that were imperfect in previous iterations have been addressed.</p>
+<p>Sometimes fixing the issue was easy, and sometimes it was hard.
+Sometimes it required a major refactor, and sometimes it required building a whole separate library.
+Sometimes it required working with the language team itself to fix bugs or introduce new language features.
+The unifying factor is that the authors were dedicated to making their code better,
+and the language gave them the tools to do so.
+Developers want to make their code better in every language.
+Rust is unique in how it helps developers to discover where and how to improve.</p>
+<p>The result is that many crates in the Rust ecosystem are a joy to use.
+It's not just because the authors are genius programmers (many of them are).
+It's because they've put in the time to address flaws over and over again.
+You don't have to be a famous open source developer to write great code in Rust.
+You just have to be willing to address the issues that impel refinement until you've built something incredible.</p>
+
+        </section>
+    </article>
+</main>
+
+
+
+        
+
+    </div>
+</body>
+
+</html>
