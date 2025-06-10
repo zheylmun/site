@@ -5,6 +5,6 @@ template = "homepage.html"
 
 I'm an engineer.
 
-I enjoy creating solutions that are correct, robust, and simple.
+I enjoy building robust and simple solutions to diverse problems.
 
-I also enjoy cycling, rock climbing, scuba diving, and photography.
+I also enjoy cycling, rock climbing, SCUBA diving, and photography.
